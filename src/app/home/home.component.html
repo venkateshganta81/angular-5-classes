@@ -1,0 +1,44 @@
+
+<div *ngIf = "showContent">
+  Hello World
+</div>
+
+<!-- <ng-template [ngIf]="showContent">
+  Hello World
+</ng-template> -->
+
+
+
+<div>
+  <ul class="list-unstyled">
+    <li *ngFor="let employee of employees;let i = index">
+      {{i+1}}  {{ employee.name }}
+    </li>
+  </ul>
+</div>
+
+<ng-template ngFor let-employee [ngForOf]="employees">
+    {{employees.name}}
+</ng-template>
+
+<div [ngClass]="checkCondition()"  >
+  ng class demo
+</div>
+
+<button (click)="hideContent()">Click</button>
+
+<!-- Directives -->
+
+<!-- 
+    *ngIf
+    *ngFor
+    *ngClass
+    *ngStyle
+ -->
+
+ <!-- Bindings -->
+
+ <!-- 
+   one Way binding (  () , []   )
+   Two way bind ( [()]  ) 
+  -->

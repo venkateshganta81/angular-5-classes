@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule , Routes } from '@angular/router'
-
+import { RouterModule , Routes } from '@angular/router';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms'
+ 
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -11,6 +12,13 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ServicesComponent } from './services/services.component';
 import { ProductDevelopmentComponent } from './services/product-development/product-development.component';
 import { HackerSharkComponent } from './services/hacker-shark/hacker-shark.component';
+import { FormStyle } from '@angular/common';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+
+
+import { AppServices } from './app.service';
+import { HttpModule } from '@angular/http';
 
 
 const routes : Routes = [
@@ -21,7 +29,9 @@ const routes : Routes = [
     { path : '' , redirectTo : '/services/hacker-shark' , pathMatch : 'full'},
     { path : 'product-development' , component : ProductDevelopmentComponent },
     { path : 'hacker-shark' , component : HackerSharkComponent }
-  ] }
+  ] },
+  { path : 'register' , component : RegisterComponent },
+  { path : 'login' , component : LoginComponent }
 ]
 
 
@@ -35,13 +45,18 @@ const routes : Routes = [
     AboutUsComponent,
     ServicesComponent,
     ProductDevelopmentComponent,
-    HackerSharkComponent
+    HackerSharkComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [AppServices],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

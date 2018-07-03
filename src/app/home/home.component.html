@@ -17,15 +17,27 @@
   </ul>
 </div>
 
-<ng-template ngFor let-employee [ngForOf]="employees">
+<!-- <ng-template ngFor let-employee [ngForOf]="employees">
     {{employees.name}}
-</ng-template>
+</ng-template> -->
 
-<div [ngClass]="checkCondition()"  >
+<div [ngClass]="callNgClass()"  >
   ng class demo
 </div>
 
+<div [ngStyle] = "{ 'height.px' : 400 , 'width.px' : 400 ,'background' : 'red' }">
+  Hello
+</div>
+
+<img [src]="selectedLogo" style="background: black">
+
+<button (click)="changeLogos()" [disabled]="showContent">{{ showContent ? "Disabled" : "notDisabled"  }}</button>
 <button (click)="hideContent()">Click</button>
+
+<div class="form-group">
+  <input  class="form-control"  [(ngModel)] = "email" placeholder="Email" type="email">
+{{email}}
+</div>
 
 <!-- Directives -->
 
@@ -42,3 +54,12 @@
    one Way binding (  () , []   )
    Two way bind ( [()]  ) 
   -->
+
+
+
+  <!-- 
+    Event Binding
+    Attribute Binding
+
+    Input Binding
+   -->

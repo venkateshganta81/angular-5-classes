@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="form-group">
+        <input type="text" placeholder="Enter Name" class="form-control" [(ngModel)]="name" >
+      </div>
+      <div class="form-group">
+        <input type="email" placeholder="Enter Email" class="form-control" [(ngModel)]="email" >
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Enter Phone" class="form-control" [(ngModel)]="mobile" >
+      </div>
+      <div class="form-group">
+        <input type="password" placeholder="Enter Password" class="form-control" [(ngModel)]="password" >
+      </div>
+      <div class="form-group">
+        <input type="button"  class="btn btn-primary" value="Submit" (click)="register()">
+      </div>
+    </div>
+  </div>
+</div>

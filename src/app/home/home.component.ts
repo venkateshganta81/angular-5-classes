@@ -10,6 +10,9 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   public showContent : boolean = true ;
+  public logo : any=[];
+  public selectedLogo :any;
+  public email : any  = "Hello";
 
   public employees = [
     {
@@ -27,14 +30,33 @@ export class HomeComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.logo = ["../assets/images/logo.svg","../assets/images/al-logo12.jpg"];
+    this.selectedLogo = this.logo[0];
   }
 
   hideContent(){
     this.showContent = !this.showContent;
   }
 
-  checkCondition(){
-    return "hell";
+  callNgClass(){
+    if(this.showContent){
+      return "hello";
+    }else{
+      return "demo";
+    }
+  }
+
+  dynamicWidth(){
+    return {
+      width : 400 + 'px',
+      height : 400 + 'px',
+      'background-color' : "red"
+    }
+  }
+
+  changeLogos(){
+    this.showContent = ! this.showContent;
+    this.selectedLogo = this.showContent ? this.logo[0] : this.logo[1];
   }
 
 }

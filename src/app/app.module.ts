@@ -12,13 +12,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ServicesComponent } from './services/services.component';
 import { ProductDevelopmentComponent } from './services/product-development/product-development.component';
 import { HackerSharkComponent } from './services/hacker-shark/hacker-shark.component';
-import { FormStyle } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 
-
-import { AppServices } from './app.service';
 import { HttpModule } from '@angular/http';
+import { AppServices } from './app.service';
 
 
 const routes : Routes = [

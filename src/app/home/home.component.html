@@ -11,8 +11,11 @@
 
 <div>
   <ul class="list-unstyled">
-    <li *ngFor="let employee of employees;let i = index">
+    <!-- <li *ngFor="let employee of employees;let i = index">
       {{i+1}}  {{ employee.name }}
+    </li> -->
+    <li>
+      {{ currentDate | percent}}
     </li>
   </ul>
 </div>

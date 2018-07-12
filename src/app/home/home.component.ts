@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
   public logo : any=[];
   public selectedLogo :any;
   public email : any  = "Hello";
+  public currentDate = 0.2;
 
   public employees = [
     {

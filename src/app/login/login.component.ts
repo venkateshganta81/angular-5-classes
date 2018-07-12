@@ -31,10 +31,12 @@ export class LoginComponent implements OnInit {
     if(this.loginForm.status == "INVALID"){
       alert("Please Enter Valid Credentials")
     }else{
+      
       this.appService.login(this.loginForm.value)
         .subscribe(
           (response) => {
-           this.loggedInUser = response.json();
+           this.loggedInUser = response;
+           console.log(response);
            localStorage.setItem('token',this.loggedInUser.userToken);
            localStorage.setItem('userId',this.loggedInUser.user._id);
            if(this.loggedInUser.status){

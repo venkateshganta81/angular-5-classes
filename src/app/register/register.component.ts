@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
       this.appService.register(this.user)
         .subscribe(
           (response) =>{
-            this.userDetails = response.json();
+            this.userDetails = response;
             if(this.userDetails.status){
               this.router.navigate(['/login'])
             }else{

@@ -18,6 +18,8 @@ import { AuthGaurd } from './services/authGaurd.service';
 import { ServicesModule } from './services/services.module';
 import { DynamicComponentComponent } from './about-us/dynamic-component/dynamic-component.component';
 import { FilterPipe } from './filter.pipe';
+import { CreateEmployeeComponent } from './create-employee/create-employee.component';
+import { SubjectService } from './subject.service';
 
 
 const routes : Routes = [
@@ -27,7 +29,8 @@ const routes : Routes = [
     { path: 'about-us/:id' , component:DynamicComponentComponent } ,
   { path : 'services' , loadChildren : './services/services.module#ServicesModule' },
   { path : 'register' , component : RegisterComponent },
-  { path : 'login' , component : LoginComponent }
+  { path : 'login' , component : LoginComponent },
+  { path : 'addEmployee' , component:CreateEmployeeComponent }
 ]
 
 
@@ -42,7 +45,8 @@ const routes : Routes = [
     LoginComponent,
     RegisterComponent,
     DynamicComponentComponent,
-    FilterPipe
+    FilterPipe,
+    CreateEmployeeComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +63,8 @@ const routes : Routes = [
       useClass : InterceptorService,
       multi: true
     },
-    AuthGaurd
+    AuthGaurd,
+    SubjectService
   ],
   bootstrap: [AppComponent]
 })

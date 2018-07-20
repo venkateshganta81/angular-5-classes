@@ -1,12 +1,23 @@
-<input [(ngModel)]="searchText" class="form-control" placeholder="search">
+<!-- <input [(ngModel)]="searchText" class="form-control" placeholder="search"> -->
 
 
 
-<div class="col-sm-3" *ngFor="let movie of movies | searchFuntionality : searchText"  style="margin-top:30px;">
+<!-- <div class="col-sm-3" *ngFor="let movie of movies | searchFuntionality : searchText"  style="margin-top:30px;">
   <div class="form-group">
     Name : {{movie.name}}
   </div>
   <div class="form-group">
     Genere : {{movie.genere}}
   </div>
+</div> -->
+
+<div *ngFor = "let movie of movieData">
+  <div>
+    Name : {{movie.name}}
+  </div>
+<div>
+  Tickets: {{movie.tickets}}
 </div>
+</div>
+
+<button class="btn btn-primary" (click)="subjectDemo()">Emit Data</button>

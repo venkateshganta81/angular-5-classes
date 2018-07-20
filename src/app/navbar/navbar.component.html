@@ -44,10 +44,21 @@
                         <li>
                             <a routerLink="/login">Login</a>
                         </li>
+                        <li>
+                            <a routerLink="/addEmployee">Add Employee{{dataRecieved}}</a>
+                        </li>
                     </ul>
                 </div>
                 <!--/.nav-collapse -->
             </div>
         </nav>
     </div>
+    <div *ngFor = "let movie of movieDetails">
+        <div>
+          Name : {{movie.name}}
+        </div>
+      <div>
+        Tickets: {{movie.tickets}}
+      </div>
+      </div>
 </section>
